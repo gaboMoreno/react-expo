@@ -6,7 +6,6 @@ class App extends Component{
 		super(props);
 	}
 
-
 	handleMouseOver(){
 		console.log("mouse Over")
 	}
