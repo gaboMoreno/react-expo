@@ -14,7 +14,7 @@ class App extends Component{
 			<div>
 				<h1 id='title' className='header'> Just a List of Items </h1>
 				<SubTitle date="12-12-2018" author="Mrs. X"/>
-				<ListItems itemsText={itemsText}/>
+				<ListItems itemsText={itemsText} />
 				<SlaveButton action={this.sayHello}/>
 			</div>
 		);
@@ -41,7 +41,8 @@ class ListItems extends Component{
 				<li>{this.props.itemsText[0]}</li>
 				<li>{this.props.itemsText[1]}</li>
 				<li>{this.props.itemsText[2]}</li>
-				<li><SpecialItem/></li>
+				<li><SpecialItem specialText=" X message"/></li>
+				<li><SpecialItem /></li>
 			</ul>
 		);
 	}
@@ -50,11 +51,13 @@ class ListItems extends Component{
 class SpecialItem extends Component{
 	render(){
 		return (
-			<p>This is a special <stron>ITEM</stron></p>
+			<p>This is a special ... <stron>{this.props.specialText}</stron></p>
 		);
 	}
 }
 
+//defaul properties
+SpecialItem.defaultProps= {specialText: "unknown" };
 
 class SlaveButton extends Component{
 	eventOnHover(){
